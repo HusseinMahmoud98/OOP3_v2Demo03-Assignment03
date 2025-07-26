@@ -1,5 +1,6 @@
 ﻿using Assignment03.Q01;
 using Assignment03.Q02;
+using Assignment03.Q03;
 
 namespace Assignment03
 {
@@ -225,7 +226,47 @@ namespace Assignment03
 
             #endregion
 
-           
+            #region Q03
+            //Question 03:
+            //we define the INotificationService interface with a method SendNotification that takes a recipient and a message as parameters.
+            //We then create three classes: EmailNotificationService, SmsNotificationService, and PushNotificationService, which implement the INotificationService interface.
+            //In each implementation, we provide the logic to send notifications through the respective communication channel:
+            //The EmailNotificationService class simulates sending an email by outputting a message to the console.
+            //The SmsNotificationService class simulates sending an SMS by outputting a message to the console.
+            //The PushNotificationService class simulates sending a push notification by outputting a message to the console.
+            //In the Main method, we create instances of each notification service class and call the SendNotification method with sample recipient and message values.
+            //This implementation allows you to easily switch between different notification channels by creating new classes that implement the INotificationService interface and provide the specific logic for each channel.
+
+            EmailNotificationService emailNotificationService = new EmailNotificationService();
+            SmsNotificationService smsNotificationService = new SmsNotificationService();
+            PushNotificationService pushNotificationService = new PushNotificationService();
+
+            string recipient, message;
+
+            do
+            {
+                Console.Write("Enter the recipient name: ");
+                recipient = Console.ReadLine();
+            }
+            while (recipient is null);
+
+            do
+            {
+                Console.Write("Enter the message content: ");
+                message = Console.ReadLine();
+            }
+            while (recipient is null);
+
+            INotificationService INotificationService = emailNotificationService;
+            INotificationService.SendNotification(recipient, message); //Email: Sending the message "Hi, Hussein!" to the recipient "Hussein"
+
+            INotificationService = smsNotificationService;
+            INotificationService.SendNotification(recipient, message); //SMS: Sending the message "Hi, Hussein!" to the recipient "Hussein"
+
+            INotificationService = pushNotificationService;
+            INotificationService.SendNotification(recipient, message); //PushNotification: Sending the message "Hi, Hussein!" to the recipient "Hussein"
+
+            #endregion
 
             #endregion
         }
