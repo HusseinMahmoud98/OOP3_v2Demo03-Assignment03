@@ -1,4 +1,5 @@
 ﻿using Assignment03.Q01;
+using Assignment03.Q02;
 
 namespace Assignment03
 {
@@ -103,36 +104,128 @@ namespace Assignment03
             #region Part02
 
             #region Q01
-            //Question 01:
-            //Define an interface named IShape with a property Area and a method DisplayShapeInfo.
-            //Create two interfaces, ICircle and IRectangle, that inherit from IShape.
-            //Implement these interfaces in classes Circle and Rectangle.
-            //Test your implementation by creating instances of both classes and displaying their shape information. 
-            Circle circle = new Circle();
-            Rectangle rectangle = new Rectangle();
+            ////Question 01:
+            ////Define an interface named IShape with a property Area and a method DisplayShapeInfo.
+            ////Create two interfaces, ICircle and IRectangle, that inherit from IShape.
+            ////Implement these interfaces in classes Circle and Rectangle.
+            ////Test your implementation by creating instances of both classes and displaying their shape information. 
+            //Circle circle = new Circle();
+            //Rectangle rectangle = new Rectangle();
 
-            double area;
+            //double area;
 
-            do
-            {
-                Console.Write("Enter the area of the Circle: "); 
-            }
-            while (!double.TryParse(Console.ReadLine(), out area));
-            circle.Area = area;
+            //do
+            //{
+            //    Console.Write("Enter the area of the Circle: ");
+            //}
+            //while (!double.TryParse(Console.ReadLine(), out area));
+            //circle.Area = area;
 
 
-            do
-            {
-                Console.Write("Enter the area of the Rectangle");
-            }
-            while (!double.TryParse(Console.ReadLine(), out area));
-            rectangle.Area = area;
+            //do
+            //{
+            //    Console.Write("Enter the area of the Rectangle: ");
+            //}
+            //while (!double.TryParse(Console.ReadLine(), out area));
+            //rectangle.Area = area;
 
-            circle.DisplayShapeInfo();
-            rectangle.DisplayShapeInfo();
+            //circle.DisplayShapeInfo();
+            //rectangle.DisplayShapeInfo();
 
             #endregion
 
+            #region Q02
+            ////Question 02:
+            ////In this example, we start by defining the IAuthenticationService interface with two methods: AuthenticateUser and AuthorizeUser.
+            ////The BasicAuthenticationService class implements this interface and provides the specific implementation for these methods.
+            ////In the BasicAuthenticationService class, the AuthenticateUser method compares the provided username and password with the stored credentials.
+            ////It returns true if the user is authenticated and false otherwise.
+            ////The AuthorizeUser method checks if the user with the given username has the specified role.It returns true if the user is authorized and false otherwise.
+            ////In the Main method, we create an instance of the BasicAuthenticationService class and assign it to the authService variable of type IAuthenticationService.
+            ////We then call the AuthenticateUser and AuthorizeUser methods using this interface reference.
+            ////This implementation allows you to switch the authentication service implementation easily by creating a new class that implements the IAuthenticationService interface
+            ////and providing the desired logic for authentication and authorization.
+
+
+            ////Initialize authService
+            //string username, password, str_role;
+            //ServiceRoles serviceRole;
+
+            //do
+            //{
+            //    Console.Write("Enter the username register: ");
+            //    username = Console.ReadLine();
+            //}
+            //while (username is null);
+
+            //do
+            //{
+            //    Console.Write("Enter the password register: ");
+            //    password = Console.ReadLine();
+            //}
+            //while (password is null);
+
+
+            //do
+            //{
+            //    Console.Write("Enter the role register (general_user1, general_user2, general_user3) : ");
+            //    str_role = Console.ReadLine();
+            //}
+            //while (!Enum.TryParse(str_role, true, out serviceRole));
+
+
+
+            //IAuthenticationService authService = new BasicAuthenticationService(username, password, serviceRole);
+
+            ////Test AuthenticateUser
+            //do
+            //{
+            //    Console.Write("Enter the username authentication: ");
+            //    username = Console.ReadLine();
+            //}
+            //while (username is null);
+
+            //do
+            //{
+            //    Console.Write("Enter the password authentication: ");
+            //    password = Console.ReadLine();
+            //}
+            //while (username is null);
+
+
+            //if(authService.AuthenticateUser(username, password))
+            //{
+            //    Console.WriteLine("User Authenticated!");
+            //}
+
+            //else
+            //{
+            //    Console.WriteLine("User Unauthenticated!");
+            //}
+
+            ////Test User role
+
+            //do
+            //{
+            //    Console.Write("Enter the role of the user (general_user1, general_user2, general_user3) : ");
+            //    str_role = Console.ReadLine();
+            //}
+            //while (!Enum.TryParse(str_role, true, out serviceRole));
+
+
+            //if (authService.AuthorizeUser(serviceRole))
+            //{
+            //    Console.WriteLine("User Authenticated!");
+            //}
+
+            //else
+            //{
+            //    Console.WriteLine("User Unauthenticated!");
+            //}
+
+            #endregion
+
+           
 
             #endregion
         }
